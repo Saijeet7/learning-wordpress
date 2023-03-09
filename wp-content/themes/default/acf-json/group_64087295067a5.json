@@ -56,9 +56,11 @@
             "post_type": [
                 "post"
             ],
-            "taxonomy": "",
+            "taxonomy": [
+                "category:profile"
+            ],
             "allow_null": 0,
-            "multiple": 0,
+            "multiple": 1,
             "return_format": "object",
             "ui": 1
         }
@@ -80,5 +82,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1678335984
+    "modified": 1678353890
 }
