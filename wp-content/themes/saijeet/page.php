@@ -12,7 +12,7 @@
  *
  * @package Sijeet
  */
-
+acf_form_head();
 get_header();
 ?>
 
@@ -32,7 +32,7 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
-<?php
+	<?php
 	if (get_field('location')) {
 		echo '<p class="location">Location: ' . get_field('location') . '</p>';
 	}
@@ -46,16 +46,16 @@ get_header();
 			<h4><span class="date">%1$s</span><span class="title">%2$s</span></h4>
 			<div class="simple-description">%3$s</div>
 			%4$s
-		</section>';//setting up new format and adding the markup 
+		</section>'; //setting up new format and adding the markup 
 
 		while (have_rows('resume')) { //getting the fields from out resume repeater (if no rows it returns false) or else it returns the number of rows
-			the_row();//it setups all our variables i.e sub-fields
+			the_row(); //it setups all our variables i.e sub-fields
 			$title = get_sub_field('title');
 			$simple_description = get_sub_field('simple_description');
 			$start_date = get_sub_field('start_date');
 			$end_date = get_sub_field('end_date');
 			$full_description = get_sub_field('full_description');
-			
+
 			$dates = ($end_date) ? $start_date . '-' . $end_date : $start_date;
 			printf(
 				$resume_format,
@@ -84,6 +84,19 @@ get_header();
 		wp_reset_postdata();
 		echo '</ul>';
 	}
+	?>
+
+	<?php
+	acf_form(array(
+		'post_id' => 'new_post',
+		'post_title' => true,
+		'post_content' => true,
+		'new_post' => array(
+			'post_type' => 'post',
+			'post_status' => 'draft',
+			'post_category' => array(1),
+		),
+	))
 	?>
 
 </main><!-- #main -->
