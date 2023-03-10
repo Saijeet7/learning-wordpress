@@ -5,7 +5,8 @@
         {
             "key": "field_64095d4a3dbf7",
             "label": "Profile Description",
-            "name": "profile_description",
+            "name": "mp_profile_description",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -24,7 +25,8 @@
         {
             "key": "field_64095d7a3dbf8",
             "label": "Location",
-            "name": "location",
+            "name": "mp_location",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -41,9 +43,135 @@
             "maxlength": ""
         },
         {
+            "key": "field_640ae10f1077a",
+            "label": "Resume",
+            "name": "mp_resume",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_640ae33d1077b",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_640ae10f1077a"
+                },
+                {
+                    "key": "field_640ae3fa1077c",
+                    "label": "Simple Description",
+                    "name": "simple_description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_640ae10f1077a"
+                },
+                {
+                    "key": "field_640ae4101077d",
+                    "label": "Start Date",
+                    "name": "start_date",
+                    "aria-label": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1,
+                    "parent_repeater": "field_640ae10f1077a"
+                },
+                {
+                    "key": "field_640ae42c1077f",
+                    "label": "End Date",
+                    "name": "end_date",
+                    "aria-label": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1,
+                    "parent_repeater": "field_640ae10f1077a"
+                },
+                {
+                    "key": "field_640ae43910780",
+                    "label": "Full Description",
+                    "name": "full_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_640ae10f1077a"
+                }
+            ]
+        },
+        {
             "key": "field_64095d8c3dbf9",
             "label": "Friends",
-            "name": "friends",
+            "name": "mp_friends",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -63,14 +191,54 @@
             "multiple": 1,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_640ac4aadfb5f",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_640ac4c4dfb60",
+            "label": "Gap & ID",
+            "name": "mp_setting",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_640ac5768ba1e"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page",
                 "operator": "==",
-                "value": "post"
+                "value": "26"
             }
         ]
     ],
@@ -82,5 +250,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1678353890
+    "show_in_rest": 0,
+    "modified": 1678436057
 }
